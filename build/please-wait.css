@@ -1,10 +1,10 @@
 /* line 17, ../src/please-wait.scss */
-body.pg-loading {
+body.ab-loading {
   overflow: hidden;
 }
 
 /* line 21, ../src/please-wait.scss */
-.pg-loading-screen {
+.ab-loading-screen {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -20,7 +20,7 @@ body.pg-loading {
   transition: background-color 0.4s ease-in-out 0s;
 }
 /* line 32, ../src/please-wait.scss */
-.pg-loading-screen.pg-loaded {
+.ab-loading-screen.ab-loaded {
   opacity: 0;
   -webkit-animation: pgAnimLoaded 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
   -moz-animation: pgAnimLoaded 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
@@ -29,11 +29,11 @@ body.pg-loading {
   animation: pgAnimLoaded 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
 }
 /* line 38, ../src/please-wait.scss */
-.pg-loading-screen.pg-loading .pg-loading-logo-header, .pg-loading-screen.pg-loading .pg-loading-html {
+.ab-loading-screen.ab-loading .ab-loading-logo-header, .ab-loading-screen.ab-loading .ab-loading-html {
   opacity: 1;
 }
 /* line 42, ../src/please-wait.scss */
-.pg-loading-screen.pg-loading .pg-loading-logo-header, .pg-loading-screen.pg-loading .pg-loading-html:not(.pg-loaded) {
+.ab-loading-screen.ab-loading .ab-loading-logo-header, .ab-loading-screen.ab-loading .ab-loading-html:not(.ab-loaded) {
   -webkit-animation: pgAnimLoading 1s cubic-bezier(0.7, 0, 0.3, 1) both;
   -moz-animation: pgAnimLoading 1s cubic-bezier(0.7, 0, 0.3, 1) both;
   -ms-animation: pgAnimLoading 1s cubic-bezier(0.7, 0, 0.3, 1) both;
@@ -41,7 +41,7 @@ body.pg-loading {
   animation: pgAnimLoading 1s cubic-bezier(0.7, 0, 0.3, 1) both;
 }
 /* line 46, ../src/please-wait.scss */
-.pg-loading-screen.pg-loading .pg-loading-html:not(.pg-loaded) {
+.ab-loading-screen.ab-loading .ab-loading-html:not(.ab-loaded) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   -ms-animation-delay: 0.3s;
@@ -49,7 +49,7 @@ body.pg-loading {
   animation-delay: 0.3s;
 }
 /* line 51, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-inner {
+.ab-loading-screen .ab-loading-inner {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -57,7 +57,7 @@ body.pg-loading {
   position: static;
 }
 /* line 59, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-center-outer {
+.ab-loading-screen .ab-loading-center-outer {
   width: 100%;
   padding: 0;
   display: table !important;
@@ -68,7 +68,7 @@ body.pg-loading {
   margin: 0;
 }
 /* line 70, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-center-middle {
+.ab-loading-screen .ab-loading-center-middle {
   padding: 0;
   vertical-align: middle;
   display: table-cell  !important;
@@ -76,24 +76,24 @@ body.pg-loading {
   text-align: center;
 }
 /* line 78, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-logo-header, .pg-loading-screen .pg-loading-html {
+.ab-loading-screen .ab-loading-logo-header, .ab-loading-screen .ab-loading-html {
   width: 100%;
   opacity: 0;
 }
 /* line 83, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-logo-header {
+.ab-loading-screen .ab-loading-logo-header {
   text-align: center;
 }
 /* line 86, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-logo-header img {
+.ab-loading-screen .ab-loading-logo-header img {
   display: inline-block !important;
 }
 /* line 91, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-html {
+.ab-loading-screen .ab-loading-html {
   margin-top: 90px;
 }
 /* line 94, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-html.pg-loaded {
+.ab-loading-screen .ab-loading-html.ab-loaded {
   -webkit-transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
   -moz-transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
   -ms-transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
@@ -101,11 +101,11 @@ body.pg-loading {
   transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 /* line 97, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-html.pg-loaded.pg-removing {
+.ab-loading-screen .ab-loading-html.ab-loaded.ab-removing {
   opacity: 0;
 }
 /* line 101, ../src/please-wait.scss */
-.pg-loading-screen .pg-loading-html.pg-loaded.pg-loading {
+.ab-loading-screen .ab-loading-html.ab-loaded.ab-loading {
   opacity: 1;
 }
 
