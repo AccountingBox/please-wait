@@ -84,7 +84,7 @@
       backgroundColor: null,
       logo: null,
       loadingHtml: null,
-      template: "<div class='pg-loading-inner'>\n  <div class='pg-loading-center-outer'>\n    <div class='pg-loading-center-middle'>\n      <h1 class='pg-loading-logo-header'>\n        <img class='pg-loading-logo'></img>\n      </h1>\n      <div class='pg-loading-html'>\n      </div>\n    </div>\n  </div>\n</div>",
+      template: "<div class='ab-loading-inner'>\n  <div class='ab-loading-center-outer'>\n    <div class='ab-loading-center-middle'>\n      <h1 class='ab-loading-logo-header'>\n        <img class='ab-loading-logo'></img>\n      </h1>\n      <div class='ab-loading-html'>\n      </div>\n    </div>\n  </div>\n</div>",
       onLoadedCallback: null
     };
 
@@ -100,30 +100,30 @@
       }
       this._loadingElem = document.createElement("div");
       this._loadingHtmlToDisplay = [];
-      this._loadingElem.className = "pg-loading-screen";
+      this._loadingElem.className = "ab-loading-screen";
       if (this.options.backgroundColor != null) {
         this._loadingElem.style.backgroundColor = this.options.backgroundColor;
       }
       this._loadingElem.innerHTML = this.options.template;
-      this._loadingHtmlElem = this._loadingElem.getElementsByClassName("pg-loading-html")[0];
+      this._loadingHtmlElem = this._loadingElem.getElementsByClassName("ab-loading-html")[0];
       if (this._loadingHtmlElem != null) {
         this._loadingHtmlElem.innerHTML = this.options.loadingHtml;
       }
       this._readyToShowLoadingHtml = false;
-      this._logoElem = this._loadingElem.getElementsByClassName("pg-loading-logo")[0];
+      this._logoElem = this._loadingElem.getElementsByClassName("ab-loading-logo")[0];
       if (this._logoElem != null) {
         this._logoElem.src = this.options.logo;
       }
-      removeClass("pg-loaded", document.body);
-      addClass("pg-loading", document.body);
+      removeClass("ab-loaded", document.body);
+      addClass("ab-loading", document.body);
       document.body.appendChild(this._loadingElem);
-      addClass("pg-loading", this._loadingElem);
+      addClass("ab-loading", this._loadingElem);
       this._onLoadedCallback = this.options.onLoadedCallback;
       listener = (function(_this) {
         return function(evt) {
           _this.loaded = true;
           _this._readyToShowLoadingHtml = true;
-          addClass("pg-loaded", _this._loadingHtmlElem);
+          addClass("ab-loaded", _this._loadingHtmlElem);
           if (animationSupport) {
             _this._loadingHtmlElem.removeEventListener(animationEvent, listener);
           }
@@ -147,7 +147,7 @@
         this._loadingHtmlListener = (function(_this) {
           return function() {
             _this._readyToShowLoadingHtml = true;
-            removeClass("pg-loading", _this._loadingHtmlElem);
+            removeClass("ab-loading", _this._loadingHtmlElem);
             if (transitionSupport) {
               _this._loadingHtmlElem.removeEventListener(transitionEvent, _this._loadingHtmlListener);
             }
@@ -159,8 +159,8 @@
         this._removingHtmlListener = (function(_this) {
           return function() {
             _this._loadingHtmlElem.innerHTML = _this._loadingHtmlToDisplay.shift();
-            removeClass("pg-removing", _this._loadingHtmlElem);
-            addClass("pg-loading", _this._loadingHtmlElem);
+            removeClass("ab-removing", _this._loadingHtmlElem);
+            addClass("ab-loading", _this._loadingHtmlElem);
             if (transitionSupport) {
               _this._loadingHtmlElem.removeEventListener(transitionEvent, _this._removingHtmlListener);
               return _this._loadingHtmlElem.addEventListener(transitionEvent, _this._loadingHtmlListener);
@@ -221,7 +221,7 @@
         immediately = false;
       }
       if (this._loadingHtmlElem == null) {
-        throw new Error("The loading template does not have an element of class 'pg-loading-html'");
+        throw new Error("The loading template does not have an element of class 'ab-loading-html'");
       }
       if (immediately) {
         this._loadingHtmlToDisplay = [loadingHtml];
@@ -238,10 +238,10 @@
       this._readyToShowLoadingHtml = false;
       this._loadingHtmlElem.removeEventListener(transitionEvent, this._loadingHtmlListener);
       this._loadingHtmlElem.removeEventListener(transitionEvent, this._removingHtmlListener);
-      removeClass("pg-loading", this._loadingHtmlElem);
-      removeClass("pg-removing", this._loadingHtmlElem);
+      removeClass("ab-loading", this._loadingHtmlElem);
+      removeClass("ab-removing", this._loadingHtmlElem);
       if (transitionSupport) {
-        addClass("pg-removing", this._loadingHtmlElem);
+        addClass("ab-removing", this._loadingHtmlElem);
         return this._loadingHtmlElem.addEventListener(transitionEvent, this._removingHtmlListener);
       } else {
         return this._removingHtmlListener();
@@ -256,14 +256,14 @@
       if (this._loadingElem == null) {
         return;
       }
-      addClass("pg-loaded", document.body);
+      addClass("ab-loaded", document.body);
       if (typeof this._onLoadedCallback === "function") {
         this._onLoadedCallback.apply(this);
       }
       listener = (function(_this) {
         return function() {
           document.body.removeChild(_this._loadingElem);
-          removeClass("pg-loading", document.body);
+          removeClass("ab-loading", document.body);
           if (animationSupport) {
             _this._loadingElem.removeEventListener(animationEvent, listener);
           }
@@ -271,7 +271,7 @@
         };
       })(this);
       if (!immediately && animationSupport) {
-        addClass("pg-loaded", this._loadingElem);
+        addClass("ab-loaded", this._loadingElem);
         return this._loadingElem.addEventListener(animationEvent, listener);
       } else {
         return listener();
